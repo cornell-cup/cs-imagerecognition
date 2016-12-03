@@ -1,0 +1,8 @@
+#!/bin/bash
+# Script for image recognition. Should have one input with path to file. 
+# File path should be /vagrant/data/[image_file] if the image is stored in the data folder
+# Currently prints results out to terminal.  
+
+cd /home/vagrant/tensorflow/tensorflow/models/image/imagenet
+python classify_image.py --image_file=$1
+

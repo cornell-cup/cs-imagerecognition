@@ -1,0 +1,18 @@
+#!/bin/bash
+# Script for retraining TensorFlow model. Should have one input with path to training folder. 
+# File path should be /vagrant/data/[retraining_data] if the retraining data is stored in the data folder
+# The retraining_data folder should contain different folders where the data is held. At least 2 folders are needed.
+
+cd /vagrant/data/
+mv tensorflow ..
+cd ../tensorflow
+./configure <<!
+
+N
+N
+
+N
+N
+!
+bazel build tensorflow/examples/image_retraining:retrain
+bazel-bin/tensorflow/examples/image_retraining/retrain --image_dir $1
