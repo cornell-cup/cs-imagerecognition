@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
 # Script for image recognition. Should have one input with path to file.
-# Currently stores result in IMAGE_CLASS.txt which is a file on the Desktop
+# Currently stores result in IMAGE_CLASS.txt which is a file in the root directory
 
-#cd /home/vagrant/tensorflow/tensorflow/models/image/imagenet
-cd /home/pi/tensorflow/models/tutorials/image/imagenet
+cd /home/vagrant/tensorflow/tensorflow/models/image/imagenet
+#cd /home/pi/tensorflow/models/tutorials/image/imagenet
 if [ $# -ge 1 ]; then
-    python3 classify_image.py --image_file=$1 2>/dev/null 1> /home/pi/Desktop/IMAGE_CLASS.txt
+    python3 classify_image.py --image_file=$1 2>/dev/null 1>/IMAGE_CLASS.txt
 fi
 
 exit 0
