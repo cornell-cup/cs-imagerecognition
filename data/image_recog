@@ -6,7 +6,7 @@
 #cd /home/vagrant/tensorflow/tensorflow/models/image/imagenet
 cd /home/pi/tensorflow/models/tutorials/image/imagenet
 if [ $# -ge 1 ]; then
-    python3 classify_image.py --image_file=$1 > /home/pi/Desktop/IMAGE_CLASS.txt
+    python3 classify_image.py --image_file=$1 2>/dev/null 1> /home/pi/Desktop/IMAGE_CLASS.txt
 fi
 
 exit 0
