@@ -15,7 +15,6 @@ conn, addr = s.accept()
 encoded_data = b''
 while 1:
 	data = conn.recv(BUFFER_SIZE)
-	print("hi")
 	if not data: 
 		break
 	encoded_data = encoded_data + data
