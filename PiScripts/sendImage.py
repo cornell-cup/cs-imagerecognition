@@ -2,19 +2,28 @@ import io
 import time
 import picamera
 import R2Protocol
+import socket
 from PIL import Image
 
+#TCP protocol 
+TCP_IP = '127.0.0.1'
+TCP_PORT = 5005
+BUFFER_SIZE = 1024
+
+
+#Getting image
 stream = io.BytesIO()
 with picamera.PiCamera() as camera:
 	camera.capture(stream, format='jpeg')
 stream.seek(0)
 image = stream.getvalue()
-with open("file.txt", 'wb') as f:
-	f.write(image)
 
-encoded = R2Protocol.encode("Pi", "NUC", "ID", stream.getvalue()) 
 
-decoded = R2Protocol.decode(encoded)
-with open("file1.txt", 'wb') as f:
-	f.write(decoded["data"])
+encoded = R2Protocol.encode("Pi", "NUC", "ID", image)
+
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
+s.connect((TCP_IP, TCP_PORT))
+s.send(encoded)
+s.close()
+
 
