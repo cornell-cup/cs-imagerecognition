@@ -7,7 +7,7 @@ from PIL import Image
 
 #TCP protocol 
 #TCP_IP = '127.0.0.1'
-TCP_IP = '192.168.4.123'
+TCP_IP = '192.168.4.40'
 TCP_PORT = 5005
 BUFFER_SIZE = 1024
 
@@ -27,6 +27,7 @@ while(True):
 		s.connect((TCP_IP, TCP_PORT))
 		s.send(encoded)
 		s.close()
+		print("Image sent")
 	except ConnectionRefusedError:
 		print("Connection not open")
 
