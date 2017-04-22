@@ -4,7 +4,7 @@ import socket
 import R2Protocol
 
 TCP_PORT = 5005
-BUFFER_SIZE= 1024
+BUFFER_SIZE= 1024 
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 #TCP_IP = s.getfqdn()
