@@ -1,0 +1,5 @@
+red wine (score = 0.16091)
+goldfish, Carassius auratus (score = 0.13166)
+feather boa, boa (score = 0.08966)
+eggnog (score = 0.02198)
+volcano (score = 0.01662)
